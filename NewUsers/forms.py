@@ -58,8 +58,12 @@ class RegistrationForm(forms.Form):
             email=email,
             password=password,
             first_name=first_name,
-            last_name=last_name
+            last_name=last_name,
+            is_active=False,
         )
+
+        user.is_active = False
+        user.save()
 
         activation_token = ''.join(random.choices(string.ascii_uppercase + string.digits, k=64))
         inactive_user = InactiveUser.objects.create(user=user, activation_token=activation_token)
