@@ -13,6 +13,23 @@
     {% include "navbar.html" %}
 {% endblock %}
 
+{% if messages %}
+    {% for message in messages %}
+        <div class="modal .modal-dialog-scrollable к .modal-dialog." tabindex="-1">
+            <div class="modal-dialog">
+                <div {% if message.tags %} class="{{ message.tags }}"{% endif %} class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{ message }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
 {% block content %}
     <div class="m-3 text-center text-white text-center">
         TEST CASE HighTech

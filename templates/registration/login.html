@@ -1,5 +1,4 @@
 {% extends "main.html" %}
-
 {% block css-js %}
     {% load static %}
     <script src="{% static 'admin/js/login.js' %}"></script>
@@ -8,7 +7,7 @@
 {% block content %}
     <main class="form-signin w-100 m-auto">
         <section class="vh-100">
-            {% if error_message %}
+            {% if error %}
                 <div class="alert alert-danger" role="alert">
                     Имя пользователя и пароль не совпадают. Введите правильные данные.
                 </div>
@@ -24,7 +23,7 @@
                                 {% csrf_token %}
                                 <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Авторизация </h3>
                                 <div class="form-group row">
-                                    <label for="{{ form.username.id_for_label }}" class="col-md-4 col-form-label text-md-right">Имя пользователя</label>
+                                    <label for="{{ form.username.id_for_label }}" class="col-md-4 col-form-label text-md-right">Введите email адрес</label>
                                     <div class="col-md-6">
                                         <input type="text" id="username" name="username"><br><br>
                                     </div>

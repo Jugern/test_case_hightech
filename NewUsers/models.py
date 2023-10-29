@@ -30,6 +30,7 @@ class Migration(migrations.Migration):
 
 class CustomUser(AbstractUser):
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    email = models.EmailField(unique=True)
     groups = models.ManyToManyField(
         'auth.Group',
         related_name='custom_users',
@@ -55,3 +56,14 @@ class EmailChangeToken(models.Model):
     expires_at = models.DateTimeField()
     is_expired = models.BooleanField(default=False)
     key = models.CharField(max_length=32)
+
+
+class InactiveUser(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    activation_token = models.CharField(max_length=64)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+
+
+
