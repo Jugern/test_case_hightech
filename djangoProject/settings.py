@@ -125,6 +125,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'NewUsers.module.EmailBackend',
+]
+
 AUTH_USER_MODEL = 'NewUsers.CustomUser'
 
 # Internationalization

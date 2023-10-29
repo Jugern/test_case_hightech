@@ -17,9 +17,7 @@ from .utils import send_confirmation_email, signup_email
 from datetime import timedelta
 from django.utils.crypto import get_random_string
 from decorators.decorators import anonymous_required
-from uuid import uuid4
 from djangoProject.settings import EMAIL_HOST_USER
-from decorators.decorators import anonymous_required
 
 
 def main(request):
