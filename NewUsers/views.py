@@ -11,7 +11,7 @@ from .models import EmailChangeToken, InactiveUser
 from .utils import send_confirmation_email
 from datetime import timedelta
 from django.utils.crypto import get_random_string
-from decorators.decorators import anonymous_required
+from .decorators.decorators import anonymous_required
 from djangoProject.settings import EMAIL_HOST_USER
 
 
