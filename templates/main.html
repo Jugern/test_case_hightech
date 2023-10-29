@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</head>
+<body style="background: url({% static 'Custom/img/main_menu.jpg'%}" class="text-white">
+
+{% block nav %}
+    {% include "navbar.html" %}
+{% endblock %}
+
+{% block content %}
+    <div class="m-3 text-center text-white text-center">
+        TEST CASE HighTech
+        <div class="">
+            <br>Создать веб-приложение c использованием фреймворка Django.
+            <br>Приложение должны быть авторизованы следующие функции:
+            <br>- авторизация/регистрация через адрес электронной почты+пароль с подтверждением адреса электронной почты
+            <br>- страница со списком пользователей
+            <br>- страница профиля пользователя
+            <br>- страница редактирования профиля
+            <br>- сброс пароля
+            <br>- изменение пароля
+            <br>- изменение адреса электронной почты
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}
+
+</body>
+</html>

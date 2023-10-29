@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% block title %}Выход{% endblock %}
+
+{% block css-js %}
+    {% load static %}
+    <script src="{% static 'admin/js/login.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 p-5">
+        <div class="card">
+            <div class="card-header">Произведен выход из системы</div>
+            <div class="card-body">
+                <p>Всего хорошего!</p>
+            </div> <!-- card body -->
+        </div> <!-- card -->
+    </div> <!-- col -->
+</div> <!-- row -->
+
+{% endblock %}

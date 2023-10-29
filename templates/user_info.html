@@ -1,0 +1,32 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <p class="text-center"></p>
+    <div class="flex-container m-5">
+        <div class="row mb-3 ">
+            <label class="border border-white col-sm-2 col-form-label">ID</label>
+            <label class="border border-white col-sm-2 col-form-label">{{ info.id }}</label>
+        </div>
+        <div class="row mb-3 ">
+            <label class="border border-white col-sm-2 col-form-label">User</label>
+            <label class="border border-white col-sm-2 col-form-label">{{ info.username }}</label>
+        </div>
+        <div class="row mb-3 ">
+            <label class="border border-white col-sm-2 col-form-label">E-mail</label>
+            <label class="border border-white col-sm-2 col-form-label">{{ info.email }}</label>
+        </div>
+        <div class="row mb-3 ">
+            <label class="border border-white col-sm-2 col-form-label">Имя</label>
+            <label class="border border-white col-sm-2 col-form-label">{{ info.first_name }}</label>
+        </div>
+        <div class="row mb-3 ">
+            <label class="border border-white col-sm-2 col-form-label">Фамилия</label>
+            <label class="border border-white col-sm-2 col-form-label">{{ info.last_name }}</label>
+        </div>
+    </div>
+    <a type="button" class="b3 mx-5 btn btn-light" href="{% url 'all_users' %}">Вернуться обратно</a>
+    {% if account %}
+        <a class="mb3 mx-5 btn btn-info" href="{% url 'user_setting' %}" role="button">Редактировать</a>
+    {% endif %}
+
+{% endblock %}

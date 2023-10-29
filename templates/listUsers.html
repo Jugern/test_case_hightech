@@ -1,0 +1,29 @@
+<div id="content" class="m-3 text-center">
+    {% if auth %}
+        {% load select_user %}
+        <p>ПОЛЬЗОВАТЕЛИ</p>
+        <table class="table text-white m-auto border border-secondary">
+            <tr class="w-25 border border-secondary">
+                <th scope="col">ID пользователей</thcol>
+                <th scope="col">Имена пользователей</th>
+                <th scope="col">Действие</th>
+            </tr>
+            {% for item in spisok %}
+                <tr class="border border-secondary">
+                    <td class="border border-secondary">{{ item.id }}</td>
+                    <td class="border border-secondary">{{ item.username }}</td>
+                    <td class="border border-secondary">
+                        <a href="{% url 'user_info' id=item.id|setURL %}">
+                            Посмотреть пользователя
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    {% else %}
+        <div class="m-3 text-center text-white text-center">
+            Нужна авторизация!
+        </div>
+    {% endif %}
+</div>

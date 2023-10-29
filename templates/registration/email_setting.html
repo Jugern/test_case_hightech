@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{% block title %}Изменения email адреса{% endblock %}
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-8 p-5">
+            <div class="card">
+                <div class="card-header">Изменения email адреса</div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <label for="new_email">Новый email адрес:</label>
+                        <input type="email" name="new_email" required>
+                        <button type="submit">Изменить</button>
+                        <a class="mb-2 mx-3 btn btn-secondary " href="{% url 'user_setting' %}" role="button">Вернуться назад</a>
+                    </form>
+                </div> <!-- card body -->
+            </div> <!-- card -->
+        </div> <!-- col -->
+    </div> <!-- row -->
+{% endblock %}

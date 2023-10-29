@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light " style="background-color: darkgrey;">
+    <a class="navbar-brand m-3" style="position: center;" href="/">Главная</a>
+    <nav class="my-2 my-md-0 mr-md-3 m-3" style="position: center;">
+        {% if user.is_authenticated %}
+        Пользователь: {{ user.username }}.
+        <a class="p-2 text-dark" href="{% url 'user_setting' %}">Изменить профиль</a>
+        <a class="p-2 text-dark" href="{% url 'all_users' %}">Список пользователей</a>
+        <a class="p-2 text-dark" href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+        <a class="p-2 text-dark" href="{% url 'login' %}">Войти</a> |
+        <a class="p-2 text-dark" href="{% url 'signup' %}">Регистрация</a>
+        <a class="p-2 text-dark" href="{% url 'password_reset' %}">Восстановить пароль</a>
+        {% endif %}
+    </nav>
+</nav>

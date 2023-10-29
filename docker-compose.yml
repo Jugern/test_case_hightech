@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "./wait-for-it.sh db:5432 -- python manage.py makemigrations NewUsers && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - /usr/src/hightech/
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    env_file:
+      - .env
+    container_name: web_app
+    networks:
+      - djangoproject_network
+  db:
+    image: postgres:14
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=${db_user}
+      - POSTGRES_PASSWORD=${db_pass}
+      - POSTGRES_DB=${db_name}
+    container_name: web_db
+    networks:
+      - djangoproject_network
+
+volumes:
+  postgres_volume:
+
+networks:
+  djangoproject_network:

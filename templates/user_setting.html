@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+
+{% block content %}
+    {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
+    <div class="row justify-content-center">
+        <div class="col-md-8 p-5">
+            <div class="card">
+                <div class="card-header">Изменение данных</div>
+                <div class="card-body">
+                    <p class="text-center"></p>
+                    <form method="post" action="{% url 'user_setting' %}">
+                        {% csrf_token %}
+                        <p>
+                            <label for="id_first_name">Имя:</label>
+                            <input type="text" name="first_name" maxlength="150" id="id_first_name" value="{{ info.first_name }}">
+                        </p>
+                        <p>
+                            <label for="id_last_name">Фамилия:</label>
+                            <input type="text" name="last_name" maxlength="150" id="id_last_name" value="{{ info.last_name }}">
+                        </p>
+                        <p>
+                            <label for="id_username">Имя пользователя:</label>
+                            <input type="text" name="username" value="{{ info.username }}" maxlength="150" autocapitalize="none" autocomplete="username" required="" id="id_username">
+                        </p>
+                        <a class="mb-2 mx-3 btn btn-secondary " href="{% url 'user_info' info.id %}" role="button">Вернуться назад</a>
+                        <button type="submit" class="mb-2 mx-3 btn btn-dark">Сохранить изменения</button>
+                        <a class="mb-2 mx-3 btn btn-primary " href="{% url 'password_change' %}" role="button">Изменить пароль</a>
+                        <a class="mb-2 mx-3 btn btn-primary " href="{% url 'email_setting' %}" role="button">Изменить email</a>
+                    </form>
+                </div> <!-- card body -->
+            </div> <!-- card -->
+        </div> <!-- col -->
+    </div> <!-- row -->
+
+{% endblock %}
