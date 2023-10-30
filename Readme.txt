@@ -6,12 +6,12 @@
 #python setting
 #это оставляете как есть
 debug=1
-"секретный ключ"
+#секретный ключ джанго
 secret_key=key
-#хосты на котором работают через запятую, например localhost,127.0.0.1
+#хосты на котором работает django, через запятую. Например: localhost,127.0.0.1
 allowed_hosts=localhost,127.0.0.1
 #домен своего сайта
-site_url=
+site_url=example.com
 
 #заполнение db postgresql
 #не изменяем
@@ -25,7 +25,7 @@ db_host=db
 #Порт базы данных PostgreSQL (обычно 5432)
 db_port=port
 
-#smtp
+#smtp для почты
 #Хост вашей почты
 e_host=smtp.email.com
 #ПОРТ SMTP вашей почты
