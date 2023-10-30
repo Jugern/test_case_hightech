@@ -5,6 +5,7 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt .
 COPY ./wait-for-it.sh .
 COPY ./script.sh .
+RUN chmod +x ./wait-for-it.sh
+RUN chmod +x ./script.sh
 RUN pip install -r requirements.txt
 COPY . .
-RUN chmod +x script.sh

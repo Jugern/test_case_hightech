@@ -1,27 +1,41 @@
-Тестовое задание для Hightech.
+#Тестовое задание для Hightech.
 
-Для начало использования через Docker-container,
-задайте ниже следующие значения в .env файле
+#Для начало использования через Docker-container,
+#задайте ниже следующие значения в .env файле
 
 #python setting
-debug=1 #это оставляете как есть
-secret_key="секретный ключ"
-allowed_hosts="хосты на котором работают через запятую" #например localhost,127.0.0.1
-site_url="домен своего сайта"
+#это оставляете как есть
+debug=1
+"секретный ключ"
+secret_key=key
+#хосты на котором работают через запятую, например localhost,127.0.0.1
+allowed_hosts=localhost,127.0.0.1
+#домен своего сайта
+site_url=
 
-#db postgresql
-db_engine=django.db.backends.postgresql #это оставляете как есть
-db_name="Имя базы данных"
-db_user="Логин базы данных"
-db_pass="Пароль базы данных"
-db_host="хост базы данных"
-db_port="Порт базы данных PostgreSQL"
+#заполнение db postgresql
+#не изменяем
+db_engine=django.db.backends.postgresql
+#Имя базы данных, юзер и пароль
+db_name=name
+db_user=user
+db_pass=pass
+#не изменяем
+db_host=db
+#Порт базы данных PostgreSQL (обычно 5432)
+db_port=port
 
 #smtp
-e_host="Хост вашей почты"
-e_port="ПОРТ SMTP вашей почты"
-e_host_user="Электронная почта"
-e_host_password="Пароль от почты"
+#Хост вашей почты
+e_host=smtp.email.com
+#ПОРТ SMTP вашей почты
+e_port=port
+#Электронная почта
+e_host_user=email.example.com
+#Пароль от почты
+e_host_password=password
+#не изменяем
 e_use_ssl=True
-def_from_e="Электронная почта"
+#Электронная почта
+def_from_e=email.example.com
 
